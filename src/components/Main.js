@@ -6,6 +6,7 @@ function Main() {
     
 
   return (
+    <>
     <MainContainer>
     <MainContainerdiv>
       <MainFrame>
@@ -25,6 +26,7 @@ function Main() {
     </MainContainerdiv>
     <Footer/>
     </MainContainer>
+</>
   )
 }
 
@@ -35,12 +37,13 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-padding: 0px 0px 285px;
+/* padding: 0px 0px 285px; */
 gap: 10px;
 
 position: absolute;
 width: 100vw;
-height: 1540px;
+min-width: 2560px;
+height: 1600px;
 left: 0px;
 top: 120px;
 `;
@@ -78,6 +81,7 @@ justify-content: center;
 align-items: center;
 padding: 0px;
 gap: 90px;
+margin-bottom: 120px;
 
 width: 1010px;
 height: 717.84px;

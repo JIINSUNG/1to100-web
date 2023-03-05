@@ -11,9 +11,9 @@ function Header() {
   return (
     <HeaderContainer>
       <Headernav>
-        <HeadernavButton>
-            <text>일에서백</text>
-            <img src={require("../assets/Instagram.png")} alt="" />        
+        <HeadernavButton onClick={()=>{alert("준비중입니다")}}>
+            <text><a href="#">일에서백</a></text>
+            <img src={require("../assets/instagram_logo.png")} alt=""/>        
             </HeadernavButton>
       </Headernav>
       <HeaderBrand>
@@ -24,10 +24,10 @@ function Header() {
         <img src={require("../assets/D.png")} alt="" />        
         </HeaderLogo>
         <HeaderSelect>
-            <Text onClick={()=> {Mains ? <></> : dispatch(StateSlice.actions.Popup())}}>다운로드</Text>
+            <Text onClick={()=> {Mains ? <></> : dispatch(StateSlice.actions.Popup())}}><a href="#">다운로드</a></Text>
         </HeaderSelect>
         <HeaderSelect>
-            <Text onClick={() => {Mains ? dispatch(StateSlice.actions.Popup()): <></>}}>서비스소개</Text>
+            <Text onClick={() => {Mains ? dispatch(StateSlice.actions.Popup()): <></>}}><a href="#">서비스소개</a></Text>
         </HeaderSelect>
       </HeaderBrand>
     </HeaderContainer>
@@ -39,6 +39,7 @@ export default Header
 const HeaderContainer = styled.div`
 position: relative;
 width: 100vw;
+min-width: 2560px;
 height: 120px;
 `;
 
@@ -89,6 +90,16 @@ line-height: 33px;
 text-align: center;
 
 color: #FFFFFF;
+
+> a {
+  color: #FFFFFF;
+  text-decoration-line: none;
+
+  :hover {
+    opacity: 50%;
+  }
+}
+
 `;
 const Headernav = styled.div`
 display: flex;
@@ -129,7 +140,14 @@ border-radius: 32px;
     /* identical to box height, or 150% */
     /* SystemGray/900 */
     color: #1C1C1E;
+
+    > a {
+  color: #1C1C1E;
+  text-decoration-line: none;
 }
+}
+
+
 
 > img {
     width: 32px;

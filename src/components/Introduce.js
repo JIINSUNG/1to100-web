@@ -1,8 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Footer from './Footer'
+import { useDispatch, useSelector } from "react-redux";
+import StateSlice from "../features/State/StateSlice";
 
 function Introduce() {
+  const Mains = useSelector((state) => {
+    return state.Popup.value;
+  });
+  const dispatch = useDispatch();
   return (
     <IntroduceContainer>
     <Frame86>
@@ -34,8 +40,7 @@ function Introduce() {
     </Frame84>
     <Frame89>
         <Frame89div>
-        <img src={require("../assets/Group 88.png")} alt=""/>
-
+        <img src={require("../assets/Group 88.png")} alt="" onClick={()=> {Mains ? <></> : dispatch(StateSlice.actions.Popup())}} />
         </Frame89div>
     </Frame89>
     <Footer />
@@ -49,6 +54,7 @@ export default Introduce
 const IntroduceContainer = styled.div`
 position : absolute;
 width: 100vw;
+min-width: 2560px;
 height: 8172px;
 top : 120px;
 bottom : 120px;
@@ -64,7 +70,9 @@ gap: 10px;
 
 position: absolute;
 width: 100vw;
+min-width: 2560px;
 height: 1554px;
+background: linear-gradient(180deg, #0678E2 0%, #0167FF 100%);
 `;
 
 const IntroduceFrame = styled.div`
@@ -95,7 +103,8 @@ align-items: center;
 justify-content: center;
 
 position: absolute;
-width: 100vw;
+width: 100%;
+min-width: 2560px;
 height: 1404px;
 top: 1500px;
 `;
@@ -106,6 +115,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 73px;
+background-color: red;
 
 width: 998px;
 height: 980px;
@@ -114,6 +124,7 @@ height: 980px;
 const Frame94 = styled.div`
 position: absolute;
 width: 100vw;
+min-width: 2560px;
 height: 1126px;
 left: 0px;
 top: 2898px;
@@ -129,6 +140,7 @@ gap: 10px;
 
 position: absolute;
 width: 100vw;
+min-width: 2560px;
 height: 1224px;
 left: 0px;
 top: 4024px;
@@ -150,6 +162,7 @@ height: 980px;
 const Frame23 = styled.div`
 position: absolute;
 width: 100vw;
+min-width: 2560px;
 height: 918px;
 left: 0px;
 top: 5248px;
@@ -158,6 +171,7 @@ top: 5248px;
 const Frame84 = styled.div`
 position: absolute;
 width: 100vw;
+min-width: 2560px;
 height: 670px;
 left: 0px;
 top: 6166px;
@@ -181,6 +195,7 @@ gap: 10px;
 
 position: absolute;
 width: 100vw;
+min-width: 2560px;
 height: 899px;
 top: 6836px;
 background: linear-gradient(180deg, #0678E2 0%, #0167FF 100%);

@@ -25,11 +25,12 @@ function MainPage() {
 export default MainPage;
 
 const MainPageContainer = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
+  height: 100%;
+  min-width: 2560px;
+  min-height: 1440px;
   display: flex;
-  height: 100vh;
-  justify-content: center;
   text-align: center;
   background: linear-gradient(180deg, #0678E2 0%, #0167FF 100%);
 `;

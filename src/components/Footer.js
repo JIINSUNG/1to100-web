@@ -27,6 +27,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 width: 100%;
+min-width: 1980px;
 background: #1C1C1E;
 position: absolute;
 bottom: 0;
